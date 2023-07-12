@@ -14,7 +14,7 @@ public class Main {
 		
 		Persona personaRodolfo = new Persona("Rodolfo", "Silvera", LocalDate.of(1990, 8, 27), Departamento.LAVALLEJA);
 		
-		
+		System.out.println("HOLAAAAA");
 		System.out.println("byte meeeeeeeeee");
 		System.out.println("Saludamos a "+personaRodolfo.getNombre());
 
