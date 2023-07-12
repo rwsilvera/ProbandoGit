@@ -1,6 +1,6 @@
 package Principal;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import Entidades.Departamento;
 import Entidades.Persona;
@@ -12,7 +12,11 @@ public class Main {
 
 	//	Persona personaRodolfo = new Persona("Rodolfo", "Silvera", fechaNac, Departamento.LAVALLEJA);
 		
-		System.out.println("Saludamos a ");
+		Persona personaRodolfo = new Persona("Rodolfo", "Silvera", LocalDate.of(1990, 8, 27), Departamento.LAVALLEJA);
+		
+		
+		
+		System.out.println("Saludamos a "+personaRodolfo.getNombre());
 
 	}
 

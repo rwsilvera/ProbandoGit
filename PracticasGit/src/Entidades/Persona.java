@@ -1,15 +1,16 @@
 package Entidades;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Calendar;
 
 public class Persona {
 	
 	private String nombre;
 	private String Apellido;
-	private Date fechaNacimiento;
+	private LocalDate fechaNacimiento;
 	private Departamento departamento;
-	private int edad = calcularEdad();
+
 	
 	
 	
@@ -31,7 +32,7 @@ public Persona() {
 
 
 
-public Persona(String nombre, String apellido, Date fechaNacimiento, Departamento departamento) {
+public Persona(String nombre, String apellido, LocalDate fechaNacimiento, Departamento departamento) {
 		super();
 		this.nombre = nombre;
 		Apellido = apellido;
@@ -50,7 +51,7 @@ public Persona(String nombre, String apellido, Date fechaNacimiento, Departament
 @Override
 	public String toString() {
 		return "Persona [nombre=" + nombre + ", Apellido=" + Apellido + ", fechaNacimiento=" + fechaNacimiento
-				+ ", departamento=" + departamento + ", edad=" + edad + "]";
+				+ ", departamento=" + departamento + "]";
 	}
 
 
@@ -109,7 +110,7 @@ public String getNombre() {
 
 
 
-	public Date getFechaNacimiento() {
+	public LocalDate getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
@@ -121,7 +122,7 @@ public String getNombre() {
 
 
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
@@ -157,9 +158,6 @@ public String getNombre() {
 
 
 
-	public int getEdad() {
-		return edad;
-	}
 
 
 
@@ -169,9 +167,6 @@ public String getNombre() {
 
 
 
-	public void setEdad(int edad) {
-		this.edad = edad;
-	}
 
 
 
@@ -181,23 +176,21 @@ public String getNombre() {
 
 
 
-private int calcularEdad() {
-	
-	Calendar fechaActual = Calendar.getInstance();
-	Calendar fechaNacimiento = Calendar.getInstance();
-	fechaNacimiento.setTime(this.fechaNacimiento);
-	
-	int edad = fechaActual.get(Calendar.YEAR)- fechaNacimiento.get(Calendar.YEAR);
-	
-	if (fechaActual.get(Calendar.MONTH) < fechaNacimiento.get(Calendar.MONTH) ||
-            (fechaActual.get(Calendar.MONTH) == fechaNacimiento.get(Calendar.MONTH) &&
-            fechaActual.get(Calendar.DAY_OF_MONTH) < fechaNacimiento.get(Calendar.DAY_OF_MONTH))) {
-        edad--;
-    }
-    
-    return edad;
+
+public int calcularEdad() {
+	LocalDate fechaActual = LocalDate.now();
+    return fechaActual.getYear() - fechaNacimiento.getYear();
 
 
 }	
+
+public static Persona crearPersona (String nombre, String apellido, LocalDate fechaNacimiento, Departamento departamento) {
+	
+	Persona p1 = new Persona(nombre, apellido, fechaNacimiento, departamento);
+	
+	
+	return p1;
+	
+}
 
 }
