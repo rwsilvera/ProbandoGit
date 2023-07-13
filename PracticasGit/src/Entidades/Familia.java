@@ -2,7 +2,7 @@ package Entidades;
 
 import java.util.LinkedList;
 
-public class familia {
+public class Familia {
 	
 	private String nombre;
 	private LinkedList<Persona> intgrantesFamilia;
@@ -18,12 +18,12 @@ public class familia {
 	public void setIntgrantesFamilia(LinkedList<Persona> intgrantesFamilia) {
 		this.intgrantesFamilia = intgrantesFamilia;
 	}
-	public familia(String nombre, LinkedList<Persona> intgrantesFamilia) {
+	public Familia(String nombre, LinkedList<Persona> intgrantesFamilia) {
 		super();
 		this.nombre = nombre;
 		this.intgrantesFamilia = intgrantesFamilia;
 	}
-	public familia() {
+	public Familia() {
 		super();
 	}
 	@Override

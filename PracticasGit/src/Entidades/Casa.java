@@ -4,7 +4,7 @@ public class Casa {
 	
 	private String direccion;
 	private String telefono;
-	private familia familia;
+	private Familia familia;
 	public String getDireccion() {
 		return direccion;
 	}
@@ -17,13 +17,13 @@ public class Casa {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	public familia getFamilia() {
+	public Familia getFamilia() {
 		return familia;
 	}
-	public void setFamilia(familia familia) {
+	public void setFamilia(Familia familia) {
 		this.familia = familia;
 	}
-	public Casa(String direccion, String telefono, Entidades.familia familia) {
+	public Casa(String direccion, String telefono, Entidades.Familia familia) {
 		super();
 		this.direccion = direccion;
 		this.telefono = telefono;
